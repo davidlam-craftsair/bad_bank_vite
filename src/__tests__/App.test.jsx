@@ -1,10 +1,20 @@
+import { test, expect } from "vitest";
 import React from 'react';
-import { render, expect } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import ReactDOM from 'react-dom';
 import App from "../App.jsx";
 
 
-test("preliminary test for setup", () => {
+test("test for properly set up the test for vite", () => {
 
   expect(Math.sqrt(4)).toBe(2);
 })
+
+test("test first page is login page", () => {
+  // render the component first
+  const { getByText, getAllByText } = render(<App />);
+
+  //
+  getByText("Please login to your account");
+})
+

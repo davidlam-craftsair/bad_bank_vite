@@ -17,7 +17,7 @@ export default function Navbar() {
             </button>
 
             <ul className="navbar-nav mb-2">
-              <li className="d-flex nav-item" style={{ background: "purple" }}>
+              <li className="d-flex nav-item">
                 <Link className="nav-link" to="pay">
                   <p>Pay</p>
                 </Link>
