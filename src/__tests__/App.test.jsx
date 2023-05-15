@@ -16,5 +16,11 @@ test("test first page is login page", () => {
 
   //
   getByText("Please login to your account");
+
 })
 
+test("test user login submit", () => {
+  const { getByText, getByLabelText, getAllByText } = render(<App />);
+
+  const input = getByLabelText();
+})

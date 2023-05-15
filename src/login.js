@@ -2,6 +2,12 @@ import React from 'react';
 import { UserContext } from './context.js'
 import Card from './card.js';
 
+function onLoginFormSubmit(e) {
+  e.preventDefault();
+  console.log('login in form submit');
+
+
+}
 export default function Login() {
   // create an React Component, namely a page for user login 
   // using Card component for user to input email and password to login
@@ -25,6 +31,9 @@ export default function Login() {
           <div className={inputDivClassName}>
             <input type="text" className="form-control" ></input>
           </div>
+        </div>
+        <div className="mt-4">
+          <input type="submit" value="Submit" onClick={onLoginFormSubmit}></input>
         </div>
       </>
     );
