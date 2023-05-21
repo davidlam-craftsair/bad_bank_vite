@@ -52,6 +52,15 @@ export default function Deposit() {
     }
   }
 
+  function onDepositInputLostFocus(e) {
+    if (e.currentTarget.value.length === 0) {
+      setIsDepositSubmitButtonDisabled(true);
+    }
+    else {
+      setIsDepositSubmitButtonDisabled(false);
+    }
+  }
+
   function handleDepositInputSubmit(e) {
     e.preventDefault();
     console.log("deposit amount = " + depositAmtInput);
@@ -67,6 +76,8 @@ export default function Deposit() {
 
       // clear the deposit amount in the input field
       setDepositAmtInput("");
+      setIsDepositSubmitButtonDisabled(true); // disable deposit button again
+
     }
   }
 
@@ -89,6 +100,7 @@ export default function Deposit() {
                 </label>
                 <input className="form-control my-2"
                   onChange={onDepositInputChange}
+                  onBlur={onDepositInputLostFocus}
                   value={depositAmtInput}
                   id="depositAmountInputId"
                   placeholder="Please input deposit amount"

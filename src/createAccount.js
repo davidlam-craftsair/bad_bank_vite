@@ -142,6 +142,7 @@ export default function CreateAccount() {
     const val = e.currentTarget.value;
 
     if (!validatePassword(val)) {
+      setIsCreateAccountButtonDisabled(true);
       alert("Password must at least contains 8 characters");
     }
   }
@@ -167,6 +168,9 @@ export default function CreateAccount() {
     if (checkIfAllValidated()) {
       onAllFieldsValidated();
     }
+    else {
+      setIsCreateAccountButtonDisabled(true);
+    }
   }
 
   function getHelperMsgClass(isValid) {
@@ -181,9 +185,11 @@ export default function CreateAccount() {
   function tryValidatePassword(val) {
     if (validatePassword(val)) {
       onPasswordValid();
+      setIsCreateAccountButtonDisabled(false);
     }
     else {
       onPasswordInvalid();
+      setIsCreateAccountButtonDisabled(true);
     }
 
   }

@@ -24,22 +24,29 @@ export default function Withdraw() {
 
   function onWithdrawInputChange(e) {
     const val = e.currentTarget.value;
+
+    if (!util.isStringNumber(val[val.length - 1])) {
+      // get the last character of the input
+      alert("Only numbers are allowed to enter");
+      return;
+    }
+    setWithdrawAmtInput(val);
     if (val.length === 0) {
       setIsWithdrawSubmitButtonDisabled(true);
     }
     else {
       setIsWithdrawSubmitButtonDisabled(false);
-
     }
+  }
 
-    if (!util.isStringNumber(val[val.length - 1])) { // get the last character of the input
-      if (val.length == 1) {
-        alert("Only numbers are allowed to enter");
-        return;
-      }
+  function onWithdrawInputLostFocus(e) {
+    const val = e.currentTarget.value;
+    if (val.length === 0) {
+      setIsWithdrawSubmitButtonDisabled(true);
     }
-
-    setWithdrawAmtInput(val);
+    else {
+      setIsWithdrawSubmitButtonDisabled(false);
+    }
   }
 
 
@@ -55,6 +62,8 @@ export default function Withdraw() {
       setCurrentBalanceToDisplay(user.currentBalance);
       console.log("current balance = " + user.currentBalance);
       setWithdrawAmtInput("");
+      // set withdraw buttont to disable again
+      setIsWithdrawSubmitButtonDisabled(true);
     }
     alert(validation.msg);
   }
@@ -81,6 +90,7 @@ export default function Withdraw() {
                 <input className="form-control my-2"
                   onChange={onWithdrawInputChange}
                   value={withdrawAmtInput}
+                  onBlur={onWithdrawInputLostFocus}
                   id="depositAmountInputId"
                   placeholder="Please input withdrawal amount"
                 />
