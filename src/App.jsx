@@ -8,16 +8,10 @@ import Withdraw from './withdraw.js';
 import AllData from './alldata.js';
 import CreateAccount from './createAccount.js'
 import { UserContext } from './context.js';
-import usersJson from './Users.json';
+import usersJson from './assets/users.json';
 
 const users = usersJson.users
-console.log(JSON.stringify(users));
-// const users = [
-//   { name: "David Lam", email: "david.lam@gmail.com", password: "123Pass78", currentBalance: 1432. },
-//   { name: "Jane Doe", email: "david.lam@gmail.com", password: "12345678", currentBalance: 1432. },
-//   { name: "Peter Parker", email: "david.lam@gmail.com", password: "12345678", currentBalance: 1432. },
-//   { name: "John Smith", email: "david.lam@gmail.com", password: "12345678", currentBalance: 1432. },
-// ]
+
 export default function App() {
   return (
     <>

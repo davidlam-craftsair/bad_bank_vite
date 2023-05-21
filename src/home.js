@@ -1,7 +1,7 @@
 import React from 'react';
 import { UserContext } from './context.js';
 import Card from './card.js';
-import bankLogo from './bank_logo.jpg';
+import bankLogo from './assets/bank_logo.jpg';
 
 export default function Home() {
   const [isAlreadyLogin, setIsAlreadyLogin] = React.useState(false);
