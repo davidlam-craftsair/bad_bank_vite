@@ -1,8 +1,10 @@
-.emailHelperMsg-red {
+.helperMsg-red {
   color:red;
   font-size:0.8rem;
+  font-style: italic;
 }
-.emailHelperMsg-green{
+.helperMsg-green{
   color:green;
   font-size:0.8rem;
 }
+

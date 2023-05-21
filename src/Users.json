@@ -1,0 +1,29 @@
+{
+  "users" : [
+
+    {
+      "name": "David Lam",
+      "email": "david.lam@omail.com",
+      "password": "0514ARDOP",
+      "currentBalance": 1252
+    },
+    {
+      "name": "Jane Doe",
+      "email": "jane@me.com",
+      "password": "Access123",
+      "currentBalance": 1252
+    },
+    {
+      "name": "Peter Parker",
+      "email": "peter@mit.edu",
+      "password": "Passcode321",
+      "currentBalance": 1252
+    },
+    {
+      "name": "John Smith",
+      "email": "john@msn.com",
+      "password": "Letmein33",
+      "currentBalance": 1252
+    }
+  ]
+}
